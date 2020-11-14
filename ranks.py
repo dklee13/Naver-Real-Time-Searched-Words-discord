@@ -20,7 +20,6 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith('!실시간검색어') or message.content.startswith('!실검'):
         json = requests.get('https://www.naver.com/srchrank?frm=main').json()
-        # data 추출
         ranks = json.get("data")
 
         for r in ranks:
